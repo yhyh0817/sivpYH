@@ -1,0 +1,11 @@
+*.pdf binary
+*.cls binary
+*.bst binary
+
+*.py text eol=lf
+*.tex text eol=lf
+*.bib text eol=lf
+*.md text eol=lf
+*.toml text eol=lf
+*.json text eol=lf
+*.csv text eol=lf

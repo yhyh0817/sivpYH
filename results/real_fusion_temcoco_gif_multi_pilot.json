@@ -1,0 +1,670 @@
+{
+  "status": "real_fusion_temcoco_gif_multi_pilot",
+  "sources": {
+    "1207_1714": "E:\\new_lunwen\\sivp\\models\\TemCoCo\\examples\\1207_1714.gif",
+    "1207_1739": "E:\\new_lunwen\\sivp\\models\\TemCoCo\\examples\\1207_1739.gif"
+  },
+  "note": "Uses rendered comparison GIF panel crops, not raw model outputs.",
+  "fusion_panels": [
+    "DATFuse",
+    "TGFuse",
+    "DDFM",
+    "CDDFuse",
+    "LRRNet",
+    "Diff-IF",
+    "MMIF-EMMA",
+    "RCVS",
+    "Ours"
+  ],
+  "test_families": [
+    "local_weight",
+    "aperiodic_gain",
+    "local_gain",
+    "patch_lag"
+  ],
+  "severities": [
+    0.025,
+    0.06,
+    0.11
+  ],
+  "protocols": [
+    {
+      "name": "both_videos_early_to_late",
+      "calibration_videos": [
+        "1207_1714",
+        "1207_1739"
+      ],
+      "calibration_starts": [
+        0,
+        40
+      ],
+      "test_videos": [
+        "1207_1714",
+        "1207_1739"
+      ],
+      "test_starts": [
+        80,
+        120,
+        160
+      ],
+      "calibration": {
+        "source_conditioned_residual": {
+          "center": 0.8942088540012549,
+          "scale": 0.13923514061527043
+        },
+        "span_residual": {
+          "center": 0.7356675506209265,
+          "scale": 0.06998396556789788
+        },
+        "global_weight_drift": {
+          "center": 0.002975682570253938,
+          "scale": 0.0031028959324763874
+        },
+        "static_operator_residual": {
+          "center": 0.3708619662110461,
+          "scale": 0.12337655177936768
+        },
+        "proposed": {
+          "center": 0.4703858619035048,
+          "scale": 0.09463165174355637
+        }
+      },
+      "thresholds": {
+        "real_detection_score": 2.8075694397772826,
+        "real_severity_score": 2.467868438687205,
+        "proposed": 0.6340442180951464,
+        "source_conditioned_residual": 1.2851211797357809,
+        "span_residual": 0.8724138272199121,
+        "static_operator_residual": 0.5407440630310777,
+        "temporal_difference": 0.016744056716561317,
+        "temcoco_flowd_visible": 0.01674405647147643,
+        "temcoco_feacd_sobel": 1.0133627823551
+      },
+      "summary": {
+        "real_detection_score": {
+          "auroc": 0.8165294924554183,
+          "accuracy": 0.33618233618233617,
+          "false_positive_rate": 0.0,
+          "severity_spearman": 0.627551762979891
+        },
+        "real_severity_score": {
+          "auroc": 0.8542809785093736,
+          "accuracy": 0.48005698005698005,
+          "false_positive_rate": 0.0,
+          "severity_spearman": 0.7211410763936981
+        },
+        "proposed": {
+          "auroc": 0.8138145861911293,
+          "accuracy": 0.40028490028490027,
+          "false_positive_rate": 0.0,
+          "severity_spearman": 0.6561131222152168
+        },
+        "source_conditioned_residual": {
+          "auroc": 0.8201303155006859,
+          "accuracy": 0.33618233618233617,
+          "false_positive_rate": 0.0,
+          "severity_spearman": 0.6417187783056899
+        },
+        "span_residual": {
+          "auroc": 0.7960390946502057,
+          "accuracy": 0.33760683760683763,
+          "false_positive_rate": 0.0,
+          "severity_spearman": 0.6158687281705879
+        },
+        "static_operator_residual": {
+          "auroc": 0.5668867169638775,
+          "accuracy": 0.16809116809116809,
+          "false_positive_rate": 0.07407407407407407,
+          "severity_spearman": 0.16614160794817381
+        },
+        "temporal_difference": {
+          "auroc": 0.8434213534522176,
+          "accuracy": 0.42450142450142453,
+          "false_positive_rate": 0.0,
+          "severity_spearman": 0.6916590164600808
+        },
+        "temcoco_flowd_visible": {
+          "auroc": 0.8434213534522176,
+          "accuracy": 0.42450142450142453,
+          "false_positive_rate": 0.0,
+          "severity_spearman": 0.6916590164600808
+        },
+        "temcoco_feacd_sobel": {
+          "auroc": 0.6376028806584362,
+          "accuracy": 0.07692307692307693,
+          "false_positive_rate": 0.0,
+          "severity_spearman": 0.2925853779903025
+        }
+      },
+      "real_detection_by_panel": {
+        "CDDFuse": {
+          "auroc": 0.8032407407407408,
+          "severity_spearman": 0.6039755232551098
+        },
+        "DATFuse": {
+          "auroc": 0.8611111111111112,
+          "severity_spearman": 0.6818547605844295
+        },
+        "DDFM": {
+          "auroc": 0.7638888888888888,
+          "severity_spearman": 0.5849378818182697
+        },
+        "Diff-IF": {
+          "auroc": 0.806712962962963,
+          "severity_spearman": 0.5828033020104827
+        },
+        "LRRNet": {
+          "auroc": 0.7754629629629629,
+          "severity_spearman": 0.5934305673374092
+        },
+        "MMIF-EMMA": {
+          "auroc": 0.8541666666666667,
+          "severity_spearman": 0.6774610637265327
+        },
+        "Ours": {
+          "auroc": 0.8425925925925927,
+          "severity_spearman": 0.6626749595025124
+        },
+        "RCVS": {
+          "auroc": 0.8333333333333333,
+          "severity_spearman": 0.6599088159067813
+        },
+        "TGFuse": {
+          "auroc": 0.7546296296296297,
+          "severity_spearman": 0.5585712233853467
+        }
+      },
+      "real_severity_by_panel": {
+        "CDDFuse": {
+          "auroc": 0.8773148148148149,
+          "severity_spearman": 0.7514210682892768
+        },
+        "DATFuse": {
+          "auroc": 0.8784722222222223,
+          "severity_spearman": 0.744708609594277
+        },
+        "DDFM": {
+          "auroc": 0.8310185185185186,
+          "severity_spearman": 0.7108292247919511
+        },
+        "Diff-IF": {
+          "auroc": 0.8240740740740741,
+          "severity_spearman": 0.677015241838143
+        },
+        "LRRNet": {
+          "auroc": 0.8032407407407407,
+          "severity_spearman": 0.6702854680624161
+        },
+        "MMIF-EMMA": {
+          "auroc": 0.8530092592592594,
+          "severity_spearman": 0.7428810320200527
+        },
+        "Ours": {
+          "auroc": 0.875,
+          "severity_spearman": 0.7523887081262861
+        },
+        "RCVS": {
+          "auroc": 0.9097222222222222,
+          "severity_spearman": 0.8201298189166127
+        },
+        "TGFuse": {
+          "auroc": 0.8078703703703705,
+          "severity_spearman": 0.6500961467352347
+        }
+      },
+      "row_counts": {
+        "calibration": 36,
+        "test": 702
+      }
+    },
+    {
+      "name": "1207_1714_to_1207_1739",
+      "calibration_videos": [
+        "1207_1714"
+      ],
+      "calibration_starts": [
+        0,
+        40,
+        80,
+        120,
+        160
+      ],
+      "test_videos": [
+        "1207_1739"
+      ],
+      "test_starts": [
+        0,
+        40,
+        80,
+        120,
+        160
+      ],
+      "calibration": {
+        "source_conditioned_residual": {
+          "center": 0.9000268338673587,
+          "scale": 0.12139712668739722
+        },
+        "span_residual": {
+          "center": 0.7446200164680101,
+          "scale": 0.06444548596222999
+        },
+        "global_weight_drift": {
+          "center": 0.0028426928749368165,
+          "scale": 0.002391910732296199
+        },
+        "static_operator_residual": {
+          "center": 0.3134214286216138,
+          "scale": 0.09718147197497595
+        },
+        "proposed": {
+          "center": 0.46939291525400306,
+          "scale": 0.06750614666430721
+        }
+      },
+      "thresholds": {
+        "real_detection_score": 3.1721866602333724,
+        "real_severity_score": 2.973711419207756,
+        "proposed": 0.6340442180842241,
+        "source_conditioned_residual": 1.2851211797357809,
+        "span_residual": 0.8724138272199121,
+        "static_operator_residual": 0.5243648079937576,
+        "temporal_difference": 0.016744056716561317,
+        "temcoco_flowd_visible": 0.01674405647147643,
+        "temcoco_feacd_sobel": 1.0133627823551
+      },
+      "summary": {
+        "real_detection_score": {
+          "auroc": 0.796954732510288,
+          "accuracy": 0.1829059829059829,
+          "false_positive_rate": 0.0,
+          "severity_spearman": 0.6646754015412979
+        },
+        "real_severity_score": {
+          "auroc": 0.864238683127572,
+          "accuracy": 0.4376068376068376,
+          "false_positive_rate": 0.0,
+          "severity_spearman": 0.7498832532168733
+        },
+        "proposed": {
+          "auroc": 0.7948971193415639,
+          "accuracy": 0.335042735042735,
+          "false_positive_rate": 0.0,
+          "severity_spearman": 0.6589193908395712
+        },
+        "source_conditioned_residual": {
+          "auroc": 0.8109465020576131,
+          "accuracy": 0.1829059829059829,
+          "false_positive_rate": 0.0,
+          "severity_spearman": 0.6903340738903747
+        },
+        "span_residual": {
+          "auroc": 0.7847736625514403,
+          "accuracy": 0.17606837606837608,
+          "false_positive_rate": 0.0,
+          "severity_spearman": 0.6564090851163336
+        },
+        "static_operator_residual": {
+          "auroc": 0.5285390946502058,
+          "accuracy": 0.25811965811965815,
+          "false_positive_rate": 0.2222222222222222,
+          "severity_spearman": 0.07429406593833908
+        },
+        "temporal_difference": {
+          "auroc": 0.8295884773662552,
+          "accuracy": 0.4222222222222222,
+          "false_positive_rate": 0.0,
+          "severity_spearman": 0.671255750393768
+        },
+        "temcoco_flowd_visible": {
+          "auroc": 0.8295884773662552,
+          "accuracy": 0.4222222222222222,
+          "false_positive_rate": 0.0,
+          "severity_spearman": 0.671255750393768
+        },
+        "temcoco_feacd_sobel": {
+          "auroc": 0.6838683127572016,
+          "accuracy": 0.07692307692307693,
+          "false_positive_rate": 0.0,
+          "severity_spearman": 0.42923837100009654
+        }
+      },
+      "real_detection_by_panel": {
+        "CDDFuse": {
+          "auroc": 0.8333333333333333,
+          "severity_spearman": 0.712819967166654
+        },
+        "DATFuse": {
+          "auroc": 0.8416666666666667,
+          "severity_spearman": 0.7221861588301031
+        },
+        "DDFM": {
+          "auroc": 0.77,
+          "severity_spearman": 0.6234434887977403
+        },
+        "Diff-IF": {
+          "auroc": 0.7666666666666666,
+          "severity_spearman": 0.612265219170064
+        },
+        "LRRNet": {
+          "auroc": 0.8033333333333332,
+          "severity_spearman": 0.6726203101705311
+        },
+        "MMIF-EMMA": {
+          "auroc": 0.8666666666666667,
+          "severity_spearman": 0.7291210226197342
+        },
+        "Ours": {
+          "auroc": 0.8333333333333334,
+          "severity_spearman": 0.7347386673606542
+        },
+        "RCVS": {
+          "auroc": 0.7833333333333333,
+          "severity_spearman": 0.7027963058225757
+        },
+        "TGFuse": {
+          "auroc": 0.79,
+          "severity_spearman": 0.659231724180059
+        }
+      },
+      "real_severity_by_panel": {
+        "CDDFuse": {
+          "auroc": 0.91,
+          "severity_spearman": 0.8059650603996962
+        },
+        "DATFuse": {
+          "auroc": 0.9333333333333333,
+          "severity_spearman": 0.8783293266281376
+        },
+        "DDFM": {
+          "auroc": 0.91,
+          "severity_spearman": 0.8992895375467143
+        },
+        "Diff-IF": {
+          "auroc": 0.8033333333333335,
+          "severity_spearman": 0.6883154767174147
+        },
+        "LRRNet": {
+          "auroc": 0.8233333333333333,
+          "severity_spearman": 0.686376559881591
+        },
+        "MMIF-EMMA": {
+          "auroc": 0.8866666666666667,
+          "severity_spearman": 0.7658721501503627
+        },
+        "Ours": {
+          "auroc": 0.8900000000000001,
+          "severity_spearman": 0.7833224016727761
+        },
+        "RCVS": {
+          "auroc": 0.92,
+          "severity_spearman": 0.8480185497251781
+        },
+        "TGFuse": {
+          "auroc": 0.8033333333333333,
+          "severity_spearman": 0.6689263083591775
+        }
+      },
+      "row_counts": {
+        "calibration": 45,
+        "test": 585
+      }
+    },
+    {
+      "name": "1207_1739_to_1207_1714",
+      "calibration_videos": [
+        "1207_1739"
+      ],
+      "calibration_starts": [
+        0,
+        40,
+        80,
+        120,
+        160
+      ],
+      "test_videos": [
+        "1207_1714"
+      ],
+      "test_starts": [
+        0,
+        40,
+        80,
+        120,
+        160
+      ],
+      "calibration": {
+        "source_conditioned_residual": {
+          "center": 0.8472022699050905,
+          "scale": 0.18756606502542528
+        },
+        "span_residual": {
+          "center": 0.7193592757278707,
+          "scale": 0.09066064087136627
+        },
+        "global_weight_drift": {
+          "center": 0.00400111159256675,
+          "scale": 0.00361240131641079
+        },
+        "static_operator_residual": {
+          "center": 0.40381401403013684,
+          "scale": 0.13394470418005716
+        },
+        "proposed": {
+          "center": 0.44005497507811175,
+          "scale": 0.09582516147920145
+        }
+      },
+      "thresholds": {
+        "real_detection_score": 0.8111091963936268,
+        "real_severity_score": 1.0699161106359967,
+        "proposed": 0.5520323997139135,
+        "source_conditioned_residual": 0.9993388301785779,
+        "span_residual": 0.785437991245995,
+        "static_operator_residual": 0.5614268147700774,
+        "temporal_difference": 0.012227117083966732,
+        "temcoco_flowd_visible": 0.012227116569288467,
+        "temcoco_feacd_sobel": 0.8816606459094706
+      },
+      "summary": {
+        "real_detection_score": {
+          "auroc": 0.8388065843621398,
+          "accuracy": 0.7897435897435897,
+          "false_positive_rate": 0.24444444444444444,
+          "severity_spearman": 0.696998513223862
+        },
+        "real_severity_score": {
+          "auroc": 0.8418930041152264,
+          "accuracy": 0.7350427350427351,
+          "false_positive_rate": 0.06666666666666667,
+          "severity_spearman": 0.7010121874801961
+        },
+        "proposed": {
+          "auroc": 0.8304526748971193,
+          "accuracy": 0.6854700854700855,
+          "false_positive_rate": 0.022222222222222223,
+          "severity_spearman": 0.6867718305307327
+        },
+        "source_conditioned_residual": {
+          "auroc": 0.8354732510288065,
+          "accuracy": 0.7897435897435897,
+          "false_positive_rate": 0.24444444444444444,
+          "severity_spearman": 0.6958806541550525
+        },
+        "span_residual": {
+          "auroc": 0.8198765432098765,
+          "accuracy": 0.7675213675213676,
+          "false_positive_rate": 0.26666666666666666,
+          "severity_spearman": 0.6809622658569539
+        },
+        "static_operator_residual": {
+          "auroc": 0.6201851851851852,
+          "accuracy": 0.10598290598290598,
+          "false_positive_rate": 0.0,
+          "severity_spearman": 0.29108790475489205
+        },
+        "temporal_difference": {
+          "auroc": 0.845514403292181,
+          "accuracy": 0.5470085470085471,
+          "false_positive_rate": 0.022222222222222223,
+          "severity_spearman": 0.6903101662168201
+        },
+        "temcoco_flowd_visible": {
+          "auroc": 0.845514403292181,
+          "accuracy": 0.5470085470085471,
+          "false_positive_rate": 0.022222222222222223,
+          "severity_spearman": 0.6903101662168201
+        },
+        "temcoco_feacd_sobel": {
+          "auroc": 0.6579835390946501,
+          "accuracy": 0.5948717948717949,
+          "false_positive_rate": 0.4,
+          "severity_spearman": 0.31376430773116115
+        }
+      },
+      "real_detection_by_panel": {
+        "CDDFuse": {
+          "auroc": 0.8,
+          "severity_spearman": 0.686376559881591
+        },
+        "DATFuse": {
+          "auroc": 0.8500000000000001,
+          "severity_spearman": 0.6528943837450413
+        },
+        "DDFM": {
+          "auroc": 0.7466666666666666,
+          "severity_spearman": 0.5855528844187584
+        },
+        "Diff-IF": {
+          "auroc": 0.7533333333333334,
+          "severity_spearman": 0.6359304437621714
+        },
+        "LRRNet": {
+          "auroc": 0.7999999999999999,
+          "severity_spearman": 0.6088198864486428
+        },
+        "MMIF-EMMA": {
+          "auroc": 0.79,
+          "severity_spearman": 0.7115766441280644
+        },
+        "Ours": {
+          "auroc": 0.8616666666666667,
+          "severity_spearman": 0.7679650080023687
+        },
+        "RCVS": {
+          "auroc": 0.875,
+          "severity_spearman": 0.7326231235917784
+        },
+        "TGFuse": {
+          "auroc": 0.75,
+          "severity_spearman": 0.6107588032844665
+        }
+      },
+      "real_severity_by_panel": {
+        "CDDFuse": {
+          "auroc": 0.7966666666666667,
+          "severity_spearman": 0.6766819757024723
+        },
+        "DATFuse": {
+          "auroc": 0.8500000000000001,
+          "severity_spearman": 0.6528943837450413
+        },
+        "DDFM": {
+          "auroc": 0.78,
+          "severity_spearman": 0.6243312211352325
+        },
+        "Diff-IF": {
+          "auroc": 0.7633333333333334,
+          "severity_spearman": 0.6282090548068798
+        },
+        "LRRNet": {
+          "auroc": 0.8133333333333335,
+          "severity_spearman": 0.6417814726576457
+        },
+        "MMIF-EMMA": {
+          "auroc": 0.76,
+          "severity_spearman": 0.6514476130679956
+        },
+        "Ours": {
+          "auroc": 0.8433333333333334,
+          "severity_spearman": 0.7367883976130072
+        },
+        "RCVS": {
+          "auroc": 0.875,
+          "severity_spearman": 0.7326231235917784
+        },
+        "TGFuse": {
+          "auroc": 0.75,
+          "severity_spearman": 0.6068809696128191
+        }
+      },
+      "row_counts": {
+        "calibration": 45,
+        "test": 585
+      }
+    }
+  ],
+  "best_by_method": {
+    "real_detection_score": {
+      "protocol": "1207_1739_to_1207_1714",
+      "auroc": 0.8388065843621398,
+      "accuracy": 0.7897435897435897,
+      "false_positive_rate": 0.24444444444444444,
+      "severity_spearman": 0.696998513223862
+    },
+    "real_severity_score": {
+      "protocol": "1207_1714_to_1207_1739",
+      "auroc": 0.864238683127572,
+      "accuracy": 0.4376068376068376,
+      "false_positive_rate": 0.0,
+      "severity_spearman": 0.7498832532168733
+    },
+    "proposed": {
+      "protocol": "1207_1739_to_1207_1714",
+      "auroc": 0.8304526748971193,
+      "accuracy": 0.6854700854700855,
+      "false_positive_rate": 0.022222222222222223,
+      "severity_spearman": 0.6867718305307327
+    },
+    "source_conditioned_residual": {
+      "protocol": "1207_1739_to_1207_1714",
+      "auroc": 0.8354732510288065,
+      "accuracy": 0.7897435897435897,
+      "false_positive_rate": 0.24444444444444444,
+      "severity_spearman": 0.6958806541550525
+    },
+    "span_residual": {
+      "protocol": "1207_1739_to_1207_1714",
+      "auroc": 0.8198765432098765,
+      "accuracy": 0.7675213675213676,
+      "false_positive_rate": 0.26666666666666666,
+      "severity_spearman": 0.6809622658569539
+    },
+    "static_operator_residual": {
+      "protocol": "1207_1739_to_1207_1714",
+      "auroc": 0.6201851851851852,
+      "accuracy": 0.10598290598290598,
+      "false_positive_rate": 0.0,
+      "severity_spearman": 0.29108790475489205
+    },
+    "temporal_difference": {
+      "protocol": "1207_1739_to_1207_1714",
+      "auroc": 0.845514403292181,
+      "accuracy": 0.5470085470085471,
+      "false_positive_rate": 0.022222222222222223,
+      "severity_spearman": 0.6903101662168201
+    },
+    "temcoco_flowd_visible": {
+      "protocol": "1207_1739_to_1207_1714",
+      "auroc": 0.845514403292181,
+      "accuracy": 0.5470085470085471,
+      "false_positive_rate": 0.022222222222222223,
+      "severity_spearman": 0.6903101662168201
+    },
+    "temcoco_feacd_sobel": {
+      "protocol": "1207_1714_to_1207_1739",
+      "auroc": 0.6838683127572016,
+      "accuracy": 0.07692307692307693,
+      "false_positive_rate": 0.0,
+      "severity_spearman": 0.42923837100009654
+    }
+  }
+}

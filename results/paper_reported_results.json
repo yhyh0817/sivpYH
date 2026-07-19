@@ -1,0 +1,853 @@
+{
+  "schema_version": "1.0",
+  "status": "paper_reported_results",
+  "reconstructed_on": "2026-07-19",
+  "scope": "Values shown in the manuscript and its supplementary material.",
+  "controlled_evaluations": {
+    "VidLLVIP independent": {
+      "label": "VidLLVIP independent",
+      "calibration_ids": [
+        1,
+        2,
+        4,
+        5,
+        7,
+        8,
+        10,
+        14
+      ],
+      "test_ids": [
+        3,
+        6,
+        9,
+        11,
+        12,
+        13
+      ],
+      "calibration_videos": 8,
+      "test_videos": 6,
+      "calibration_rows": 768,
+      "test_rows": 792,
+      "test_artifact_families": [
+        "local_weight",
+        "aperiodic_gain",
+        "local_gain",
+        "patch_lag"
+      ],
+      "hard_negative_families": [
+        "source_global_gain",
+        "source_local_gain",
+        "source_cross_exposure"
+      ],
+      "reported_metrics": {
+        "detection_auroc": 0.9977,
+        "worst_auroc": 0.9966,
+        "accuracy": 0.976,
+        "fpr": 0.0056,
+        "severity_head_auroc": 0.9948,
+        "severity_srocc": 0.9262,
+        "positive_only_srocc": 0.8506
+      },
+      "source_files": [
+        "results/fusion_temporal_quality_independent.json",
+        "results/manuscript_additional_verified_metrics.json"
+      ]
+    },
+    "M3SVD held out": {
+      "label": "M3SVD held out",
+      "calibration_ids": [
+        "0111_1716",
+        "0111_1753",
+        "0111_1803",
+        "0112_1705",
+        "0112_1707",
+        "0112_1722",
+        "0112_1732",
+        "0113_1647",
+        "0113_1714",
+        "0114_1537"
+      ],
+      "test_ids": [
+        "0114_1551",
+        "0114_1609",
+        "0114_1611",
+        "0115_1829",
+        "0115_1831",
+        "0115_1834",
+        "0115_1847",
+        "0117_1605",
+        "0117_1620",
+        "0118_1803",
+        "0118_1904",
+        "0118_1913",
+        "1204_1139",
+        "1207_1712",
+        "1207_1739",
+        "1208_1654",
+        "1208_1711",
+        "1208_1717",
+        "1230_1154",
+        "1230_1202"
+      ],
+      "calibration_videos": 10,
+      "test_videos": 20,
+      "calibration_rows": 960,
+      "test_rows": 2640,
+      "test_artifact_families": [
+        "local_weight",
+        "aperiodic_gain",
+        "local_gain",
+        "patch_lag"
+      ],
+      "hard_negative_families": [
+        "source_global_gain",
+        "source_local_gain",
+        "source_cross_exposure"
+      ],
+      "reported_metrics": {
+        "detection_auroc": 0.9963,
+        "worst_auroc": 0.995,
+        "accuracy": 0.9527,
+        "fpr": 0.0083,
+        "severity_head_auroc": 0.9715,
+        "severity_srocc": 0.8682,
+        "positive_only_srocc": 0.7709
+      },
+      "source_files": [
+        "results/fusion_temporal_quality_m3svd_full_test.json",
+        "results/manuscript_additional_verified_metrics.json"
+      ]
+    }
+  },
+  "real_fusion_output_evaluation": {
+    "evaluation_design": {
+      "model_count": 9,
+      "models": [
+        "DATFuse",
+        "TGFuse",
+        "DDFM",
+        "CDDFuse",
+        "LRRNet",
+        "Diff-IF",
+        "MMIF-EMMA",
+        "RCVS",
+        "TemCoCo (Ours panel)"
+      ],
+      "test_samples": {
+        "positive": 90,
+        "negative": 90,
+        "total": 180,
+        "balanced": true
+      },
+      "source_material": {
+        "origin": "Rendered panels in the public TemCoCo comparison videos",
+        "videos": [
+          "models/TemCoCo/examples/1207_1714.gif",
+          "models/TemCoCo/examples/1207_1739.gif"
+        ],
+        "locally_reexecuted_checkpoints": false
+      },
+      "aggregation": {
+        "detection_auroc": "macro average over nine rendered fusion-output groups",
+        "detection_worst_auroc": "minimum over nine rendered fusion-output groups",
+        "severity_auroc": "macro average over nine rendered fusion-output groups",
+        "severity_spearman": "macro average over nine rendered fusion-output groups",
+        "threshold_metrics": "pooled over the 180-sample balanced test set"
+      }
+    },
+    "metrics": {
+      "detection_auroc": 0.9078,
+      "detection_worst_auroc": 0.8808,
+      "detection_accuracy": 0.8889,
+      "detection_false_positive_rate": 0.0444,
+      "detection_specificity": 0.9556,
+      "detection_recall": 0.8222,
+      "detection_precision": 0.9487,
+      "detection_f1": 0.881,
+      "detection_balanced_accuracy": 0.8889,
+      "detection_mcc": 0.7848,
+      "severity_auroc": 0.8972,
+      "severity_spearman": 0.8176,
+      "severity_positive_only_spearman": 0.7589
+    },
+    "confusion_matrix": {
+      "true_positive": 74,
+      "false_negative": 16,
+      "true_negative": 86,
+      "false_positive": 4
+    },
+    "derived_metrics": {
+      "false_negative_rate": 0.1778,
+      "negative_predictive_value": 0.8431,
+      "youden_j": 0.7778,
+      "positive_likelihood_ratio": 18.5,
+      "negative_likelihood_ratio": 0.186
+    },
+    "per_output_group": [
+      {
+        "model": "DATFuse",
+        "detection_auroc": 0.9156,
+        "severity_auroc": 0.905,
+        "severity_spearman": 0.833
+      },
+      {
+        "model": "TGFuse",
+        "detection_auroc": 0.8984,
+        "severity_auroc": 0.886,
+        "severity_spearman": 0.785
+      },
+      {
+        "model": "DDFM",
+        "detection_auroc": 0.8808,
+        "severity_auroc": 0.875,
+        "severity_spearman": 0.805
+      },
+      {
+        "model": "CDDFuse",
+        "detection_auroc": 0.9089,
+        "severity_auroc": 0.898,
+        "severity_spearman": 0.821
+      },
+      {
+        "model": "LRRNet",
+        "detection_auroc": 0.9012,
+        "severity_auroc": 0.887,
+        "severity_spearman": 0.794
+      },
+      {
+        "model": "Diff-IF",
+        "detection_auroc": 0.8867,
+        "severity_auroc": 0.879,
+        "severity_spearman": 0.779
+      },
+      {
+        "model": "MMIF-EMMA",
+        "detection_auroc": 0.9195,
+        "severity_auroc": 0.907,
+        "severity_spearman": 0.826
+      },
+      {
+        "model": "RCVS",
+        "detection_auroc": 0.927,
+        "severity_auroc": 0.918,
+        "severity_spearman": 0.842
+      },
+      {
+        "model": "TemCoCo (Ours panel)",
+        "detection_auroc": 0.9321,
+        "severity_auroc": 0.9198,
+        "severity_spearman": 0.8734
+      }
+    ]
+  },
+  "baselines_and_ablations": {
+    "rows": [
+      {
+        "dataset": "VidLLVIP independent",
+        "group": "ours",
+        "method": "Ours detection head",
+        "auroc": 0.9977,
+        "worst_auroc": 0.9966,
+        "accuracy": 0.976,
+        "fpr": 0.0056,
+        "spearman": 0.8406
+      },
+      {
+        "dataset": "VidLLVIP independent",
+        "group": "ours",
+        "method": "Ours severity head",
+        "auroc": 0.9948,
+        "worst_auroc": 0.9901,
+        "accuracy": 0.9141,
+        "fpr": 0.0417,
+        "spearman": 0.9262
+      },
+      {
+        "dataset": "VidLLVIP independent",
+        "group": "ours",
+        "method": "Ours composite",
+        "auroc": 0.9988,
+        "worst_auroc": 0.9981,
+        "accuracy": 0.851,
+        "fpr": 0.0639,
+        "spearman": 0.9004
+      },
+      {
+        "dataset": "VidLLVIP independent",
+        "group": "ablation",
+        "method": "Source-conditioned residual",
+        "auroc": 0.9977,
+        "worst_auroc": 0.9966,
+        "accuracy": 0.9722,
+        "fpr": 0.0444,
+        "spearman": 0.8406
+      },
+      {
+        "dataset": "VidLLVIP independent",
+        "group": "ablation",
+        "method": "Span residual",
+        "auroc": 0.9981,
+        "worst_auroc": 0.9971,
+        "accuracy": 0.9735,
+        "fpr": 0.0417,
+        "spearman": 0.8631
+      },
+      {
+        "dataset": "VidLLVIP independent",
+        "group": "ablation",
+        "method": "Static operator residual",
+        "auroc": 0.9494,
+        "worst_auroc": 0.9242,
+        "accuracy": 0.7828,
+        "fpr": 0.1306,
+        "spearman": 0.8433
+      },
+      {
+        "dataset": "VidLLVIP independent",
+        "group": "baseline",
+        "method": "Global weight drift",
+        "auroc": 0.818,
+        "worst_auroc": 0.649,
+        "accuracy": 0.6919,
+        "fpr": 0.0583,
+        "spearman": 0.7753
+      },
+      {
+        "dataset": "VidLLVIP independent",
+        "group": "baseline",
+        "method": "Source-normalized change",
+        "auroc": 0.8118,
+        "worst_auroc": 0.7713,
+        "accuracy": 0.721,
+        "fpr": 0.325,
+        "spearman": 0.5782
+      },
+      {
+        "dataset": "VidLLVIP independent",
+        "group": "baseline",
+        "method": "Temporal difference",
+        "auroc": 0.3108,
+        "worst_auroc": 0.2708,
+        "accuracy": 0.4482,
+        "fpr": 0.0139,
+        "spearman": 0.6541
+      },
+      {
+        "dataset": "VidLLVIP independent",
+        "group": "baseline",
+        "method": "Flow warp error",
+        "auroc": 0.3108,
+        "worst_auroc": 0.2708,
+        "accuracy": 0.4482,
+        "fpr": 0.0139,
+        "spearman": 0.6541
+      },
+      {
+        "dataset": "VidLLVIP independent",
+        "group": "baseline",
+        "method": "TemCoCo-style flowD visible",
+        "auroc": 0.3108,
+        "worst_auroc": 0.2708,
+        "accuracy": 0.4482,
+        "fpr": 0.0139,
+        "spearman": 0.6541
+      },
+      {
+        "dataset": "VidLLVIP independent",
+        "group": "baseline",
+        "method": "TemCoCo-style feaCD Sobel",
+        "auroc": 0.6619,
+        "worst_auroc": 0.6431,
+        "accuracy": 0.4646,
+        "fpr": 0.0778,
+        "spearman": 0.359
+      },
+      {
+        "dataset": "M3SVD 12-pair",
+        "group": "ours",
+        "method": "Ours detection head",
+        "auroc": 0.9991,
+        "worst_auroc": 0.9986,
+        "accuracy": 0.9874,
+        "fpr": 0.0,
+        "spearman": 0.8055
+      },
+      {
+        "dataset": "M3SVD 12-pair",
+        "group": "ours",
+        "method": "Ours severity head",
+        "auroc": 0.9926,
+        "worst_auroc": 0.9861,
+        "accuracy": 0.9457,
+        "fpr": 0.0833,
+        "spearman": 0.8666
+      },
+      {
+        "dataset": "M3SVD 12-pair",
+        "group": "ours",
+        "method": "Ours composite",
+        "auroc": 0.9827,
+        "worst_auroc": 0.9691,
+        "accuracy": 0.8965,
+        "fpr": 0.1694,
+        "spearman": 0.7873
+      },
+      {
+        "dataset": "M3SVD 12-pair",
+        "group": "ablation",
+        "method": "Source-conditioned residual",
+        "auroc": 0.9991,
+        "worst_auroc": 0.9986,
+        "accuracy": 0.9773,
+        "fpr": 0.0417,
+        "spearman": 0.8055
+      },
+      {
+        "dataset": "M3SVD 12-pair",
+        "group": "ablation",
+        "method": "Span residual",
+        "auroc": 0.9992,
+        "worst_auroc": 0.9984,
+        "accuracy": 0.9823,
+        "fpr": 0.0306,
+        "spearman": 0.8352
+      },
+      {
+        "dataset": "M3SVD 12-pair",
+        "group": "ablation",
+        "method": "Static operator residual",
+        "auroc": 0.931,
+        "worst_auroc": 0.909,
+        "accuracy": 0.8043,
+        "fpr": 0.1806,
+        "spearman": 0.7248
+      },
+      {
+        "dataset": "M3SVD 12-pair",
+        "group": "baseline",
+        "method": "Global weight drift",
+        "auroc": 0.8179,
+        "worst_auroc": 0.6381,
+        "accuracy": 0.7197,
+        "fpr": 0.0944,
+        "spearman": 0.7662
+      },
+      {
+        "dataset": "M3SVD 12-pair",
+        "group": "baseline",
+        "method": "Source-normalized change",
+        "auroc": 0.8163,
+        "worst_auroc": 0.7961,
+        "accuracy": 0.774,
+        "fpr": 0.2056,
+        "spearman": 0.5634
+      },
+      {
+        "dataset": "M3SVD 12-pair",
+        "group": "baseline",
+        "method": "Temporal difference",
+        "auroc": 0.2909,
+        "worst_auroc": 0.2592,
+        "accuracy": 0.4053,
+        "fpr": 0.1083,
+        "spearman": 0.6901
+      },
+      {
+        "dataset": "M3SVD 12-pair",
+        "group": "baseline",
+        "method": "Flow warp error",
+        "auroc": 0.2909,
+        "worst_auroc": 0.2592,
+        "accuracy": 0.4053,
+        "fpr": 0.1083,
+        "spearman": 0.6901
+      },
+      {
+        "dataset": "M3SVD 12-pair",
+        "group": "baseline",
+        "method": "TemCoCo-style flowD visible",
+        "auroc": 0.2909,
+        "worst_auroc": 0.2592,
+        "accuracy": 0.4053,
+        "fpr": 0.1083,
+        "spearman": 0.6901
+      },
+      {
+        "dataset": "M3SVD 12-pair",
+        "group": "baseline",
+        "method": "TemCoCo-style feaCD Sobel",
+        "auroc": 0.7546,
+        "worst_auroc": 0.7526,
+        "accuracy": 0.5025,
+        "fpr": 0.0667,
+        "spearman": 0.5482
+      },
+      {
+        "dataset": "M3SVD 30-pair",
+        "group": "ours",
+        "method": "Ours detection head",
+        "auroc": 0.9963,
+        "worst_auroc": 0.995,
+        "accuracy": 0.9527,
+        "fpr": 0.0083,
+        "spearman": 0.8181
+      },
+      {
+        "dataset": "M3SVD 30-pair",
+        "group": "ours",
+        "method": "Ours severity head",
+        "auroc": 0.9715,
+        "worst_auroc": 0.9456,
+        "accuracy": 0.9197,
+        "fpr": 0.0825,
+        "spearman": 0.8682
+      },
+      {
+        "dataset": "M3SVD 30-pair",
+        "group": "ours",
+        "method": "Ours composite",
+        "auroc": 0.9908,
+        "worst_auroc": 0.9867,
+        "accuracy": 0.9443,
+        "fpr": 0.0308,
+        "spearman": 0.8532
+      },
+      {
+        "dataset": "M3SVD 30-pair",
+        "group": "ablation",
+        "method": "Source-conditioned residual",
+        "auroc": 0.9963,
+        "worst_auroc": 0.995,
+        "accuracy": 0.9534,
+        "fpr": 0.0475,
+        "spearman": 0.8181
+      },
+      {
+        "dataset": "M3SVD 30-pair",
+        "group": "ablation",
+        "method": "Span residual",
+        "auroc": 0.9959,
+        "worst_auroc": 0.9949,
+        "accuracy": 0.9485,
+        "fpr": 0.0575,
+        "spearman": 0.8162
+      },
+      {
+        "dataset": "M3SVD 30-pair",
+        "group": "ablation",
+        "method": "Static operator residual",
+        "auroc": 0.9383,
+        "worst_auroc": 0.9182,
+        "accuracy": 0.8174,
+        "fpr": 0.0283,
+        "spearman": 0.7945
+      },
+      {
+        "dataset": "M3SVD 30-pair",
+        "group": "baseline",
+        "method": "Global weight drift",
+        "auroc": 0.825,
+        "worst_auroc": 0.6507,
+        "accuracy": 0.7383,
+        "fpr": 0.1125,
+        "spearman": 0.739
+      },
+      {
+        "dataset": "M3SVD 30-pair",
+        "group": "baseline",
+        "method": "Source-normalized change",
+        "auroc": 0.8086,
+        "worst_auroc": 0.7823,
+        "accuracy": 0.8386,
+        "fpr": 0.0033,
+        "spearman": 0.5675
+      },
+      {
+        "dataset": "M3SVD 30-pair",
+        "group": "baseline",
+        "method": "Temporal difference",
+        "auroc": 0.2963,
+        "worst_auroc": 0.2628,
+        "accuracy": 0.439,
+        "fpr": 0.0342,
+        "spearman": 0.6541
+      },
+      {
+        "dataset": "M3SVD 30-pair",
+        "group": "baseline",
+        "method": "Flow warp error",
+        "auroc": 0.2963,
+        "worst_auroc": 0.2628,
+        "accuracy": 0.439,
+        "fpr": 0.0342,
+        "spearman": 0.6541
+      },
+      {
+        "dataset": "M3SVD 30-pair",
+        "group": "baseline",
+        "method": "TemCoCo-style flowD visible",
+        "auroc": 0.2963,
+        "worst_auroc": 0.2628,
+        "accuracy": 0.439,
+        "fpr": 0.0342,
+        "spearman": 0.6541
+      },
+      {
+        "dataset": "M3SVD 30-pair",
+        "group": "baseline",
+        "method": "TemCoCo-style feaCD Sobel",
+        "auroc": 0.7021,
+        "worst_auroc": 0.6796,
+        "accuracy": 0.4742,
+        "fpr": 0.0358,
+        "spearman": 0.5061
+      },
+      {
+        "dataset": "VidLLVIP independent",
+        "group": "baseline",
+        "method": "ResNet-18 feaCD visible-source probe",
+        "auroc": 0.6681,
+        "worst_auroc": 0.666,
+        "accuracy": 0.4874,
+        "fpr": 0.1556,
+        "spearman": 0.1146
+      },
+      {
+        "dataset": "VidLLVIP independent",
+        "group": "baseline",
+        "method": "SEA-RAFT flowD visible-source probe",
+        "auroc": 0.3084,
+        "worst_auroc": 0.268,
+        "accuracy": 0.4495,
+        "fpr": 0.0111,
+        "spearman": 0.6787
+      },
+      {
+        "dataset": "M3SVD 30-pair",
+        "group": "baseline",
+        "method": "SEA-RAFT flowD visible-source probe",
+        "auroc": 0.2946,
+        "worst_auroc": 0.2606,
+        "accuracy": 0.4409,
+        "fpr": 0.03,
+        "spearman": 0.6755
+      },
+      {
+        "dataset": "VidLLVIP independent",
+        "group": "baseline",
+        "method": "Entropy instability",
+        "auroc": 0.3816,
+        "worst_auroc": 0.3468,
+        "accuracy": 0.4129,
+        "fpr": 0.0917,
+        "spearman": 0.6084
+      },
+      {
+        "dataset": "VidLLVIP independent",
+        "group": "baseline",
+        "method": "Standard-deviation instability",
+        "auroc": 0.384,
+        "worst_auroc": 0.3466,
+        "accuracy": 0.3977,
+        "fpr": 0.1278,
+        "spearman": 0.5942
+      },
+      {
+        "dataset": "VidLLVIP independent",
+        "group": "baseline",
+        "method": "Spatial-frequency instability",
+        "auroc": 0.3879,
+        "worst_auroc": 0.3497,
+        "accuracy": 0.4104,
+        "fpr": 0.0972,
+        "spearman": 0.5738
+      },
+      {
+        "dataset": "VidLLVIP independent",
+        "group": "baseline",
+        "method": "Mutual-information instability",
+        "auroc": 0.5199,
+        "worst_auroc": 0.3732,
+        "accuracy": 0.4785,
+        "fpr": 0.0306,
+        "spearman": 0.485
+      },
+      {
+        "dataset": "VidLLVIP independent",
+        "group": "baseline",
+        "method": "Edge-correlation instability",
+        "auroc": 0.4226,
+        "worst_auroc": 0.395,
+        "accuracy": 0.4508,
+        "fpr": 0.0083,
+        "spearman": 0.2734
+      }
+    ],
+    "source_file": "results/fusion_temporal_quality_baseline_table.csv",
+    "note": "Values are rounded to four decimals for the paper reporting view."
+  },
+  "leave_one_source_out": {
+    "source_count": 14,
+    "detection_head": {
+      "mean_auroc": 0.9997,
+      "mean_accuracy": 0.9679,
+      "mean_fpr": 0.05
+    },
+    "severity_head": {
+      "mean_auroc": 0.9935,
+      "mean_accuracy": 0.9353,
+      "mean_fpr": 0.0536,
+      "mean_srocc": 0.9572
+    },
+    "per_source": {
+      "source_01": {
+        "detection_auroc": 1.0,
+        "severity_head_auroc": 0.987,
+        "severity_srocc": 0.9716,
+        "detection_fpr": 0.05,
+        "severity_fpr": 0.1
+      },
+      "source_02": {
+        "detection_auroc": 1.0,
+        "severity_head_auroc": 1.0,
+        "severity_srocc": 0.9716,
+        "detection_fpr": 0.0167,
+        "severity_fpr": 0.0167
+      },
+      "source_03": {
+        "detection_auroc": 0.9981,
+        "severity_head_auroc": 0.9625,
+        "severity_srocc": 0.9527,
+        "detection_fpr": 0.0833,
+        "severity_fpr": 0.05
+      },
+      "source_04": {
+        "detection_auroc": 1.0,
+        "severity_head_auroc": 1.0,
+        "severity_srocc": 0.9716,
+        "detection_fpr": 0.05,
+        "severity_fpr": 0.05
+      },
+      "source_05": {
+        "detection_auroc": 1.0,
+        "severity_head_auroc": 1.0,
+        "severity_srocc": 0.9716,
+        "detection_fpr": 0.0833,
+        "severity_fpr": 0.0333
+      },
+      "source_06": {
+        "detection_auroc": 0.9972,
+        "severity_head_auroc": 0.9954,
+        "severity_srocc": 0.9608,
+        "detection_fpr": 0.0,
+        "severity_fpr": 0.0
+      },
+      "source_07": {
+        "detection_auroc": 1.0,
+        "severity_head_auroc": 0.9898,
+        "severity_srocc": 0.9716,
+        "detection_fpr": 0.0,
+        "severity_fpr": 0.0333
+      },
+      "source_08": {
+        "detection_auroc": 1.0,
+        "severity_head_auroc": 1.0,
+        "severity_srocc": 0.9716,
+        "detection_fpr": 0.0167,
+        "severity_fpr": 0.0
+      },
+      "source_09": {
+        "detection_auroc": 1.0,
+        "severity_head_auroc": 0.9963,
+        "severity_srocc": 0.9176,
+        "detection_fpr": 0.0667,
+        "severity_fpr": 0.05
+      },
+      "source_10": {
+        "detection_auroc": 1.0,
+        "severity_head_auroc": 1.0,
+        "severity_srocc": 0.9716,
+        "detection_fpr": 0.05,
+        "severity_fpr": 0.0
+      },
+      "source_11": {
+        "detection_auroc": 1.0,
+        "severity_head_auroc": 0.994,
+        "severity_srocc": 0.9608,
+        "detection_fpr": 0.05,
+        "severity_fpr": 0.0333
+      },
+      "source_12": {
+        "detection_auroc": 1.0,
+        "severity_head_auroc": 1.0,
+        "severity_srocc": 0.9527,
+        "detection_fpr": 0.0833,
+        "severity_fpr": 0.05
+      },
+      "source_13": {
+        "detection_auroc": 1.0,
+        "severity_head_auroc": 0.9972,
+        "severity_srocc": 0.9473,
+        "detection_fpr": 0.05,
+        "severity_fpr": 0.05
+      },
+      "source_14": {
+        "detection_auroc": 1.0,
+        "severity_head_auroc": 0.987,
+        "severity_srocc": 0.9069,
+        "detection_fpr": 0.1,
+        "severity_fpr": 0.2833
+      }
+    }
+  },
+  "additional_reported_measurements": {
+    "runtime": {
+      "cpu": "13th Gen Intel Core i7-13650HX",
+      "input": "20 frames resized to 160x128",
+      "clip_source": "models/TemCoCo/examples/1207_1739.gif, Ours panel",
+      "warmup_runs": 2,
+      "timed_runs": 10,
+      "mean_seconds": 0.4083,
+      "standard_deviation_seconds": 0.0086,
+      "equivalent_fps": 48.98,
+      "opencv_threads": 20,
+      "scope": "Algorithm-only single-clip CPU benchmark after frame loading"
+    },
+    "searaft_flowd_probe": {
+      "VidLLVIP": {
+        "auroc": 0.3084,
+        "false_positive_rate": 0.0111,
+        "spearman": 0.6787
+      },
+      "M3SVD": {
+        "auroc": 0.2946,
+        "false_positive_rate": 0.03,
+        "spearman": 0.6755
+      },
+      "note": "Measured local SEA-RAFT flowD-style probe, not an official TemCoCo metric-script reproduction."
+    },
+    "source_file": "results/manuscript_additional_verified_metrics.json"
+  },
+  "other_retained_protocol": {
+    "M3SVD 12-pair subset": {
+      "reported_metrics": {
+        "detection_auroc": 0.9991,
+        "worst_auroc": 0.9986,
+        "accuracy": 0.9874,
+        "fpr": 0.0,
+        "severity_head_auroc": 0.9926,
+        "severity_srocc": 0.8666
+      },
+      "source_file": "results/fusion_temporal_quality_m3svd_subset.json",
+      "note": "Separate retained protocol; not the full-test row used in the main manuscript table."
+    }
+  },
+  "historical_pilot_files": {
+    "included": false,
+    "files": [
+      "results/real_fusion_temcoco_gif_pilot.json",
+      "results/real_fusion_temcoco_gif_multi_pilot.json"
+    ],
+    "reason": "Different exploratory protocols and not part of the final paper evaluation."
+  }
+}

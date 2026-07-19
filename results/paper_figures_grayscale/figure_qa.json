@@ -1,0 +1,82 @@
+[
+  {
+    "stem": "Fig1_method_overview",
+    "width_px": 4110,
+    "height_px": 2149,
+    "pdf_width_mm": 174.0,
+    "pdf_height_mm": 91.0,
+    "fonts_embedded": true,
+    "max_rgb_channel_delta": 0,
+    "nonwhite_fraction": 0.3758
+  },
+  {
+    "stem": "Fig2_source_explainability_concept",
+    "width_px": 4110,
+    "height_px": 1464,
+    "pdf_width_mm": 174.0,
+    "pdf_height_mm": 62.0,
+    "fonts_embedded": true,
+    "max_rgb_channel_delta": 0,
+    "nonwhite_fraction": 0.1201
+  },
+  {
+    "stem": "Fig3_cross_dataset_results",
+    "width_px": 4110,
+    "height_px": 1559,
+    "pdf_width_mm": 174.0,
+    "pdf_height_mm": 66.0,
+    "fonts_embedded": true,
+    "max_rgb_channel_delta": 0,
+    "nonwhite_fraction": 0.2109
+  },
+  {
+    "stem": "Fig4_baseline_comparison",
+    "width_px": 4110,
+    "height_px": 2692,
+    "pdf_width_mm": 174.0,
+    "pdf_height_mm": 114.0,
+    "fonts_embedded": true,
+    "max_rgb_channel_delta": 0,
+    "nonwhite_fraction": 0.1983
+  },
+  {
+    "stem": "Fig5_artifact_and_hard_negative_response",
+    "width_px": 4110,
+    "height_px": 1582,
+    "pdf_width_mm": 174.0,
+    "pdf_height_mm": 67.0,
+    "fonts_embedded": true,
+    "max_rgb_channel_delta": 0,
+    "nonwhite_fraction": 0.0824
+  },
+  {
+    "stem": "Fig6_qualitative_residual_case",
+    "width_px": 4110,
+    "height_px": 1937,
+    "pdf_width_mm": 174.0,
+    "pdf_height_mm": 82.0,
+    "fonts_embedded": true,
+    "max_rgb_channel_delta": 0,
+    "nonwhite_fraction": 0.462
+  },
+  {
+    "stem": "SFig1_component_ablation",
+    "width_px": 4110,
+    "height_px": 1440,
+    "pdf_width_mm": 174.0,
+    "pdf_height_mm": 61.0,
+    "fonts_embedded": true,
+    "max_rgb_channel_delta": 0,
+    "nonwhite_fraction": 0.2317
+  },
+  {
+    "stem": "SFig2_leave_one_source_out",
+    "width_px": 4110,
+    "height_px": 1440,
+    "pdf_width_mm": 174.0,
+    "pdf_height_mm": 61.0,
+    "fonts_embedded": true,
+    "max_rgb_channel_delta": 0,
+    "nonwhite_fraction": 0.0732
+  }
+]

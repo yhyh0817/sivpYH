@@ -1,0 +1,61 @@
+{
+  "status": "verified_additional_metrics_and_output_level_reporting_scope",
+  "verified_on": "2026-07-19",
+  "positive_only_spearman": {
+    "definition": "Compute SROCC within each positive-severity artifact-family and fusion-operator group, then macro-average across groups.",
+    "VidLLVIP": 0.8505654323747602,
+    "M3SVD": 0.7708728652590142,
+    "sources": [
+      "results/fusion_temporal_quality_independent.json",
+      "results/fusion_temporal_quality_m3svd_full_test.json"
+    ]
+  },
+  "legacy_intervals_not_reported_in_manuscript": {
+    "model_level_t_intervals_95_percent": {
+      "detection_auroc": [0.8943, 0.9213],
+      "severity_auroc": [0.8846, 0.9098],
+      "overall_spearman": [0.7944, 0.8408]
+    },
+    "wilson_intervals_95_percent": {
+      "accuracy": [0.8346, 0.9269],
+      "false_positive_rate": [0.0174, 0.1088]
+    },
+    "note": "These legacy proxy intervals are retained for audit history only and are not reported in the manuscript."
+  },
+  "runtime_benchmark": {
+    "cpu": "13th Gen Intel Core i7-13650HX",
+    "input": "20 frames resized to 160x128",
+    "clip_source": "models/TemCoCo/examples/1207_1739.gif, Ours panel",
+    "warmup_runs": 2,
+    "timed_runs": 10,
+    "mean_seconds": 0.4083,
+    "standard_deviation_seconds": 0.0086,
+    "equivalent_fps": 48.98,
+    "opencv_threads": 20,
+    "scope": "Algorithm-only single-clip CPU benchmark after frame loading"
+  },
+  "searaft_flowd_probe": {
+    "VidLLVIP": {
+      "auroc": 0.3084,
+      "false_positive_rate": 0.0111,
+      "spearman": 0.6787
+    },
+    "M3SVD": {
+      "auroc": 0.2946,
+      "false_positive_rate": 0.03,
+      "spearman": 0.6755
+    },
+    "note": "Measured local SEA-RAFT flowD-style probe, not an official TemCoCo metric-script reproduction."
+  },
+  "output_level_reporting_scope": {
+    "source_videos": [
+      "models/TemCoCo/examples/1207_1714.gif",
+      "models/TemCoCo/examples/1207_1739.gif"
+    ],
+    "fusion_output_groups": 9,
+    "confirmed_test_positive": 90,
+    "confirmed_test_negative": 90,
+    "confirmed_test_total": 180,
+    "exploratory_pilots_are_final_results": false
+  }
+}

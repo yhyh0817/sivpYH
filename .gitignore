@@ -1,0 +1,76 @@
+# Local datasets and downloaded archives
+/data/
+
+# Third-party repositories, checkpoints, and rendered comparison media
+/models/
+
+# Downloaded literature and review packets
+/references/
+
+# Only the paper-related scripts and modules are versioned in this repository.
+/scripts/*
+!/scripts/analyze_fusion_temporal_quality_split_robustness.py
+!/scripts/compile_fusion_temporal_quality_baseline_table.py
+!/scripts/download_vidllvip_subset.py
+!/scripts/run_framewise_fusion_metric_baselines_independent.py
+!/scripts/run_fusion_temporal_quality_external.py
+!/scripts/run_fusion_temporal_quality_independent.py
+!/scripts/run_fusion_temporal_quality_m3svd_full_test.py
+!/scripts/run_real_fusion_temcoco_gif_multi_pilot.py
+!/scripts/run_real_fusion_temcoco_gif_pilot.py
+!/scripts/run_temcoco_resnet_feacd_independent.py
+!/scripts/run_temcoco_searaft_flowd_independent.py
+!/scripts/run_temcoco_searaft_flowd_m3svd_full_test.py
+!/scripts/figures/
+/scripts/figures/*
+!/scripts/figures/generate_sivp_figures.py
+
+/src/cursor_rgbt/*
+!/src/cursor_rgbt/__init__.py
+!/src/cursor_rgbt/fusion_temporal_quality.py
+!/src/cursor_rgbt/temcoco_baselines.py
+!/src/cursor_rgbt/temporal_sync.py
+
+/tests/*
+!/tests/test_fusion_temporal_quality.py
+!/tests/test_temporal_sync.py
+
+# Results are ignored by default; the verified manuscript artifacts are added
+# explicitly to the repository.
+/results/
+
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+*.egg-info/
+
+# LaTeX intermediate files
+*.aux
+*.blg
+*.log
+*.out
+*.toc
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+
+# Local manuscript backups and QA renders
+manuscript/**/*_backup_*
+manuscript/format_audit_backup/
+manuscript/official_template/
+manuscript/Springer_Nature_LaTeX_template_Dec2024.zip
+manuscript/sivp_first_draft/main.bbl
+manuscript/sivp_first_draft/render/
+manuscript/sivp_first_draft/supplementary.pdf
+results/manuscript_qa_*/
+
+# Editor and OS files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

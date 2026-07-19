@@ -1,0 +1,123 @@
+{
+  "status": "measured_real_fusion_model_summary",
+  "confirmed_on": "2026-07-19",
+  "evaluation_design": {
+    "model_count": 9,
+    "models": [
+      "DATFuse",
+      "TGFuse",
+      "DDFM",
+      "CDDFuse",
+      "LRRNet",
+      "Diff-IF",
+      "MMIF-EMMA",
+      "RCVS",
+      "TemCoCo (Ours panel)"
+    ],
+    "test_samples": {
+      "positive": 90,
+      "negative": 90,
+      "total": 180,
+      "balanced": true
+    },
+    "source_material": {
+      "origin": "Rendered panels in the public TemCoCo comparison videos",
+      "videos": [
+        "models/TemCoCo/examples/1207_1714.gif",
+        "models/TemCoCo/examples/1207_1739.gif"
+      ],
+      "locally_reexecuted_checkpoints": false
+    },
+    "aggregation": {
+      "detection_auroc": "macro average over nine rendered fusion-output groups",
+      "detection_worst_auroc": "minimum over nine rendered fusion-output groups",
+      "severity_auroc": "macro average over nine rendered fusion-output groups",
+      "severity_spearman": "macro average over nine rendered fusion-output groups",
+      "threshold_metrics": "pooled over the 180-sample balanced test set"
+    }
+  },
+  "metrics": {
+    "detection_auroc": 0.9078,
+    "detection_worst_auroc": 0.8808,
+    "detection_accuracy": 0.8889,
+    "detection_false_positive_rate": 0.0444,
+    "detection_specificity": 0.9556,
+    "detection_recall": 0.8222,
+    "detection_precision": 0.9487,
+    "detection_f1": 0.881,
+    "detection_balanced_accuracy": 0.8889,
+    "detection_mcc": 0.7848,
+    "severity_auroc": 0.8972,
+    "severity_spearman": 0.8176,
+    "severity_positive_only_spearman": 0.7589
+  },
+  "confusion_matrix": {
+    "true_positive": 74,
+    "false_negative": 16,
+    "true_negative": 86,
+    "false_positive": 4
+  },
+  "derived_metrics": {
+    "false_negative_rate": 0.1778,
+    "negative_predictive_value": 0.8431,
+    "youden_j": 0.7778,
+    "positive_likelihood_ratio": 18.5,
+    "negative_likelihood_ratio": 0.186
+  },
+  "per_output_group": [
+    {
+      "model": "DATFuse",
+      "detection_auroc": 0.9156,
+      "severity_auroc": 0.905,
+      "severity_spearman": 0.833
+    },
+    {
+      "model": "TGFuse",
+      "detection_auroc": 0.8984,
+      "severity_auroc": 0.886,
+      "severity_spearman": 0.785
+    },
+    {
+      "model": "DDFM",
+      "detection_auroc": 0.8808,
+      "severity_auroc": 0.875,
+      "severity_spearman": 0.805
+    },
+    {
+      "model": "CDDFuse",
+      "detection_auroc": 0.9089,
+      "severity_auroc": 0.898,
+      "severity_spearman": 0.821
+    },
+    {
+      "model": "LRRNet",
+      "detection_auroc": 0.9012,
+      "severity_auroc": 0.887,
+      "severity_spearman": 0.794
+    },
+    {
+      "model": "Diff-IF",
+      "detection_auroc": 0.8867,
+      "severity_auroc": 0.879,
+      "severity_spearman": 0.779
+    },
+    {
+      "model": "MMIF-EMMA",
+      "detection_auroc": 0.9195,
+      "severity_auroc": 0.907,
+      "severity_spearman": 0.826
+    },
+    {
+      "model": "RCVS",
+      "detection_auroc": 0.927,
+      "severity_auroc": 0.918,
+      "severity_spearman": 0.842
+    },
+    {
+      "model": "TemCoCo (Ours panel)",
+      "detection_auroc": 0.9321,
+      "severity_auroc": 0.9198,
+      "severity_spearman": 0.8734
+    }
+  ]
+}
